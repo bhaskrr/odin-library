@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  --system-ui: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--system-ui);
+}
+
+body {
+  background-color: #DCD9D4;
+}
+
+header h1 {
+  font-family: 'Lemon', serif;
+  padding: 20px;
+  color: white;
+  background-color: rgb(0, 119, 255);
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* Dialog element */
+dialog {
+  text-align: left;
+  margin: auto;
+  border: 0;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+dialog h2 {
+  color: white;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  background-color: rgb(0, 119, 255);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  font-size: 1.5rem;
+}
+
+label {
+  font-size: 20px;
+}
+
+.form-input {
+  padding: 0;
+  font-size: 1.5rem;
+  height: 2rem;
+  border: 1px solid;
+  outline: none;
+  border-radius: 5px;
+
+}
+
+.form-input:focus {
+  border-style: none;
+  border: 2px solid rgb(0, 119, 255);
+
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns button {
+  width: 100px;
+  height: 50px;
+  color: white;
+  border: 0;
+  font-size: 22px;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.btns button:hover {
+  opacity: 1;
+}
+
+.submit {
+  background-color: RGB(39, 174, 96);
+}
+
+.clear {
+  background-color: RGB(231, 76, 60);
+}
+
+/* Main */
+main {
+  padding: 20px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 24.4%);
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid;
+  line-height: 50px;
+  color: white;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+  background-blend-mode: multiply, multiply;
+}
+
+
+.card h3 {
+  font-size: 40px;
+}
+
+.card h4 {
+  font-size: 30px;
+}
+
+.card p {
+  font-size: 20px;
+}
+
+/* Delete button */
+.delete-btn {
+  background: transparent;
+  border: 0;
+}
+
+/* Add book button */
+.plus-btn {
+  /* width: max-content; */
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border: 0;
+  border-radius: 10px;
+  background-color: transparent;
+  transform: rotate(0deg) scale(1);
+  transition-property: transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+.plus-btn img {
+  width: 100px;
+}
+
+.plus-btn:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin | Library</title>
+    <link rel="shortcut icon" href="icons/books-svgrepo-com.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Library</h1>
+    </header>
+    <dialog id="input-dialog">
+        <h2>Add a book</h2>
+        <form action="">
+            <label for="title">Title<br>
+                <input type="text" name="title" id="title" class="form-input" required>
+            </label>
+            <label for="author">Author<br>
+                <input type="text" name="author" id="author" class="form-input" required>
+            </label>
+            <label for="publish-year">Year<br>
+                <input type="number" name="year" id="publish-year" class="form-input" required max="2024" min="0" value="">
+            </label>
+            <label for="pages">Pages<br>
+                <input type="number" name="pages" id="pages" class="form-input" min="0" required>
+            </label>
+            <label for="isRead">Have you read it?
+                <input type="checkbox" name="isRead" id="isRead" value="">
+            </label>
+            <div class="btns">
+                <button type="submit" class="form-btn submit" id="submit_btn">Add</button>
+                <button type="button" class="form-btn clear" id="cancel_btn">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    <main>
+        <div class="cards-container">
+            <!-- <div class="card" data="0">
+                <h3>1984</h3>
+                <h4>George Orwell</h4>
+                <p>Published in 1949</p>
+                <p>328 pages</p>
+                <div class="switch-delete">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <button type="button" class="delete-btn"><img src="./icons/trash-can.svg" alt="Delete icon"></button>
+                </div>
+            </div>
+            <div class="card" data="1">
+                <h3>1984</h3>
+                <h4>George Orwell</h4>
+                <p>Published in 1949</p>
+                <p>328 pages</p>
+                <div class="switch-delete">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <button type="button" class="delete-btn"><img src="./icons/trash-can.svg" alt="Delete icon"></button>
+                </div>
+            </div> -->
+            <!-- <div class="card">
+                <h3>1984</h3>
+                <h4>George Orwell</h4>
+                <p>Published in 1949</p>
+                <p>328 pages</p>
+                <div class="switch-delete">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <button type="button" class="delete-btn"><img src="./icons/trash-can.svg" alt=""></button>
+                </div>
+            </div> -->
+        </div>
+    </main>
+    <button id="add_new_book" class="plus-btn" title="Add a book"><img src="./icons/plus-square-svgrepo-com.svg" alt="Add new book"></button>
+    <script src="script.js"></script>
+</body>
+
+</html>
