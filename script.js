@@ -6,11 +6,15 @@ const cancelBtn = document.querySelector('#cancel_btn');
 const gridContainer = document.querySelector('.cards-container');
 
 //to display and close the dialog
-addBookBtn.addEventListener('click', ()=>{
+addBookBtn.addEventListener('click', () => {
     dialog.showModal();
 })
 
-function closeDialog(){
+function resetForm(){
+    form.reset();
+}
+
+function closeDialog() {
     dialog.close();
 }
 
@@ -19,13 +23,15 @@ cancelBtn.addEventListener('click', closeDialog);
 //to store books
 const library = [];
 
-//book prototype
-function Book(title, author, publishYear, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.year = publishYear;
-    this.pages = pages;
-    this.isRead = isRead;
+//book class
+class Book {
+    constructor(title, author, publishYear, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.year = publishYear;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
 }
 
 //creates and adds books to library
@@ -33,15 +39,15 @@ function addBookToLibrary() {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const publishYear = document.querySelector('#publish-year').value;
-    
+
     const pages = document.querySelector('#pages').value;
     const readInfo = document.querySelector('#isRead');
 
     let readStatus;
-    if(readInfo.checked){
+    if (readInfo.checked) {
         readStatus = 'Read';
     }
-    else{
+    else {
         readStatus = 'Not read yet';
     }
 
@@ -51,19 +57,19 @@ function addBookToLibrary() {
 }
 
 
-function resetBooksGrid(){
+function resetBooksGrid() {
     gridContainer.innerHTML = '';
 }
 
 
-function deleteElement(e){
+function deleteElement(e) {
     gridContainer.removeChild(e.target.parentElement.parentElement);
 }
 
 //displays books
-function displayLibrary(){
+function displayLibrary() {
     resetBooksGrid();
-    library.map((book)=>{
+    library.map((book) => {
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
 
@@ -101,18 +107,18 @@ function displayLibrary(){
     })
 }
 
-displayLibrary();
+displayLibrary(); //initial render
 
-// to submit the dialog form
+// to handle the dialog form
 const form = document.querySelector('form');
-submitBtn.addEventListener('click', (e)=>{
-    if(!form.checkValidity()){
-        e.preventDefault();
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
         alert('Invalid input!');
     }
-    else{
-        e.preventDefault();
+    else {
         addBookToLibrary();
+        resetForm();
         closeDialog();
     }
 });
